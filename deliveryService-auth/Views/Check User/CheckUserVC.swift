@@ -37,15 +37,16 @@ class CheckUserVC: UIViewController {
        }()
        
        let codeNumber: UITextField = {
-           let phone = UITextField()
-           phone.placeholder = "6 знаков"
-           phone.textColor = .black
-           phone.textAlignment = .center
-           phone.font = .systemFont(ofSize: 22)
-           phone.translatesAutoresizingMaskIntoConstraints = false
-           phone.backgroundColor = UIColor.lightGray.withAlphaComponent(0.05)
-           phone.layer.cornerRadius = 20
-           return phone
+           let code = UITextField()
+           code.placeholder = "6 знаков"
+           code.textColor = .black
+           code.textAlignment = .center
+           code.font = .systemFont(ofSize: 22)
+            code.keyboardType = .numberPad
+           code.translatesAutoresizingMaskIntoConstraints = false
+           code.backgroundColor = UIColor.lightGray.withAlphaComponent(0.05)
+           code.layer.cornerRadius = 20
+           return code
        }()
        
        let checkButton: UIButton = {
@@ -59,6 +60,17 @@ class CheckUserVC: UIViewController {
            return checkCode
        }()
     
+    func addDoneButton() {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+            target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done,
+            target: view, action: #selector(UIView.endEditing(_:)))
+        keyboardToolbar.items = [flexBarButton, doneBarButton]
+        codeNumber.inputAccessoryView = keyboardToolbar
+    }
+    
     let sendAgainButton: UIButton = {
         let sendCode = UIButton()
         sendCode.setTitle("Отправить снова", for: .normal)
@@ -71,10 +83,11 @@ class CheckUserVC: UIViewController {
         view.backgroundColor = .white
         self.hideKeyboardWhenTappedAround()
         self.navigationController?.isNavigationBarHidden = false
-        
+
         setupCheckMiddleView()
         setupCheckButton()
         setupChechBottomView()
+        addDoneButton()
     }
     
     
