@@ -1,0 +1,6 @@
+framework module Pods_deliveryService_auth {
+  umbrella header "Pods-deliveryService-auth-umbrella.h"
+
+  export *
+  module * { export * }
+}
