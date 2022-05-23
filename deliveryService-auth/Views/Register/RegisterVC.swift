@@ -16,7 +16,8 @@ class RegisterVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.hideKeyboardWhenTappedAround()
-        self.navigationController?.isNavigationBarHidden = true
+       self.navigationController?.isNavigationBarHidden = false
+       setTransparentNavigationBar()
         
     }
     override func viewDidLoad() {

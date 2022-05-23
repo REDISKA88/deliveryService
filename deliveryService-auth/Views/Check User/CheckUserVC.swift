@@ -101,7 +101,7 @@ class CheckUserVC: UIViewController {
         checkCode.setTitleColor(UIColor.black.withAlphaComponent(0.7), for: .normal)
         checkCode.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         checkCode.translatesAutoresizingMaskIntoConstraints = false
-        checkCode.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        checkCode.backgroundColor = UIColor.white.withAlphaComponent(1)
         checkCode.layer.cornerRadius = 30
         return checkCode
     }()
