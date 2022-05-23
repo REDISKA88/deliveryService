@@ -41,6 +41,10 @@ extension RegisterVC {
     
     func setupButton() {
         view.addSubview(getCodeButton)
+        
+//        getCodeButton.alpha = 0.5
+//        getCodeButton.isEnabled = false
+        
         getCodeButton.topAnchor.constraint(equalTo: middleBackView.bottomAnchor, constant: 25).isActive = true
         getCodeButton.leadingAnchor.constraint(equalTo: middleBackView.leadingAnchor, constant: 50).isActive = true
         getCodeButton.trailingAnchor.constraint(equalTo: middleBackView.trailingAnchor, constant: -50).isActive = true

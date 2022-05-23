@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>260266492361-og4f2746gin68eddbg3nmomltklltrff.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.260266492361-og4f2746gin68eddbg3nmomltklltrff</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCP5ThC3_Uk1gE9BtnYBwwSVyNOqVvshCg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>260266492361</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>virusloki.deliveryService-auth</string>
+	<key>PROJECT_ID</key>
+	<string>deliveryservice-auth</string>
+	<key>STORAGE_BUCKET</key>
+	<string>deliveryservice-auth.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:260266492361:ios:c4661e22ffa1af49042818</string>
+</dict>
+</plist>

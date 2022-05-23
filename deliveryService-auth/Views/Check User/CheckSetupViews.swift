@@ -15,7 +15,7 @@ extension CheckUserVC {
         view.addSubview(checkBackView)
         checkBackView.addSubview(checkTextLabel)
         checkBackView.addSubview(codeNumber)
-        checkBackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200).isActive = true
+        checkBackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
         checkBackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
         checkBackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
         checkBackView.heightAnchor.constraint(equalToConstant: 150).isActive = true
@@ -24,7 +24,7 @@ extension CheckUserVC {
         checkTextLabel.centerXAnchor.constraint(equalTo: checkBackView.centerXAnchor).isActive = true
         checkTextLabel.topAnchor.constraint(equalTo: checkBackView.topAnchor, constant: 25).isActive = true
         
-        
+        codeNumber.delegate = self
         codeNumber.widthAnchor.constraint(equalToConstant: 200).isActive = true
         codeNumber.heightAnchor.constraint(equalToConstant: 50).isActive = true
         codeNumber.centerXAnchor.constraint(equalTo: checkBackView.centerXAnchor).isActive = true
@@ -51,9 +51,29 @@ extension CheckUserVC {
         sendAgainButton.topAnchor.constraint(equalTo: timerLabel.bottomAnchor, constant: 10).isActive = true
         sendAgainButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
       
-        // sendAgainButton.setTitleColor(.systemBlue, for: .normal)
-        sendAgainButton.setTitleColor(.gray, for: .normal)
+        //sendAgainButton.setTitleColor(.systemBlue, for: .normal)
+        timerLabel.textColor = UIColor.white.withAlphaComponent(0.6)
+        sendAgainButton.setTitleColor(UIColor.white.withAlphaComponent(0.8), for: .normal)
+    }
+
+}
+
+extension CheckUserVC: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentChars = textField.text?.count ?? 0
+        if range.length + range.location > currentChars { return false }
+        
+        let newLength = currentChars + string.count - range.length
+        return newLength <= 6
     }
     
-    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if textField.text?.count == 6 {
+            checkButton.alpha = 1
+            checkButton.isEnabled = true
+        } else {
+            checkButton.alpha = 0.5
+            checkButton.isEnabled = false
+        }
+    }
 }

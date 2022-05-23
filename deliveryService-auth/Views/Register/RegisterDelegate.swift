@@ -46,4 +46,15 @@ extension RegisterVC: UITextFieldDelegate {
           
           return "+" + number
       }
+    
+    
+//    func textFieldDidChangeSelection(_ textField: UITextField) {
+//        if textField.text?.count == 18 {
+//            getCodeButton.alpha = 1
+//            getCodeButton.isEnabled = true
+//        } else {
+//            getCodeButton.alpha = 0.5
+//            getCodeButton.isEnabled = false
+//        }
+//    }
 }

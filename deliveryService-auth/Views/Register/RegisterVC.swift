@@ -13,7 +13,7 @@ class RegisterVC: UIViewController {
     let mainLabel: UILabel = {
         let label = UILabel()
         label.text = "Регистрация"
-        label.textColor = UIColor.black.withAlphaComponent(1)
+        label.textColor = UIColor.black.withAlphaComponent(0.9)
        // label.textColor = #colorLiteral(red: 0, green: 0.6786748171, blue: 1, alpha: 1)
         label.font = .systemFont(ofSize: 22)
         label.textAlignment = .center
@@ -26,7 +26,7 @@ class RegisterVC: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Введите номер телефона:"
         label.textAlignment = .center
-        label.textColor = UIColor.black.withAlphaComponent(0.9)
+        label.textColor = UIColor.white.withAlphaComponent(0.9)
         label.font = .systemFont(ofSize: 18)
         return label
     }()
@@ -39,17 +39,20 @@ class RegisterVC: UIViewController {
         midView.layer.masksToBounds = true
         midView.layer.cornerRadius = 40
         
-        midView.backgroundColor = #colorLiteral(red: 0.05897665769, green: 0.5006305575, blue: 1, alpha: 0.2)
+        midView.backgroundColor = #colorLiteral(red: 0.2407030165, green: 0.2418233156, blue: 0.2445392311, alpha: 0.2)
         
         return midView
     }()
     
     let phoneNumber: UITextField = {
         let phone = UITextField()
-        phone.placeholder = "+7(ххх)ххх-хх-хх"
-        phone.textColor = .black
+        phone.textColor = .white
         phone.textAlignment = .center
         phone.font = .systemFont(ofSize: 22)
+        phone.attributedPlaceholder = NSAttributedString(
+            string: "+7(ххх)ххх-хх-хх",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightText.withAlphaComponent(0.3)]
+        )
         phone.translatesAutoresizingMaskIntoConstraints = false
         phone.keyboardType = .numberPad
         phone.backgroundColor = UIColor.lightGray.withAlphaComponent(0.05)
@@ -60,10 +63,10 @@ class RegisterVC: UIViewController {
     let getCodeButton: UIButton = {
         let getCode = UIButton()
         getCode.setTitle("Получить код", for: .normal)
-        getCode.setTitleColor(.black, for: .normal)
+        getCode.setTitleColor(UIColor.white.withAlphaComponent(0.7), for: .normal)
         getCode.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         getCode.translatesAutoresizingMaskIntoConstraints = false
-        getCode.backgroundColor = #colorLiteral(red: 0.05897665769, green: 0.5006305575, blue: 1, alpha: 0.2)
+        getCode.backgroundColor = #colorLiteral(red: 0.2407030165, green: 0.2418233156, blue: 0.2445392311, alpha: 0.7)
         getCode.layer.cornerRadius = 30
         return getCode
     }()
@@ -78,10 +81,13 @@ class RegisterVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+      //  view.backgroundColor = .white
+        
+        setGradientBackground(colorTop: .white, colorBottom: .systemIndigo)
         setupMainLabel()
         setupMiddleView()
         setupButton()
+     
     }
     
     func hideKeyboard() {
@@ -110,5 +116,18 @@ extension UIViewController {
     }
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+extension UIViewController {
+    func setGradientBackground(colorTop: UIColor, colorBottom: UIColor) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [colorBottom.cgColor, colorTop.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
+        gradientLayer.locations = [0, 1]
+        gradientLayer.frame = view.bounds
+
+        view.layer.insertSublayer(gradientLayer, at: 0)
     }
 }
