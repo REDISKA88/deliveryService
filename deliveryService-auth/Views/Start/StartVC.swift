@@ -7,8 +7,20 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class StartVC: UIViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            if Auth.auth().currentUser?.uid != nil {
+                // TabBar vc in future
+                let restsVc = RestaurantsVC()
+                self.navigationController?.pushViewController(restsVc, animated: false)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

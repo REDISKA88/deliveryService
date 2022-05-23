@@ -1,4 +1,5 @@
 import UIKit
+import FirebaseAuth
 
 class RestaurantsVC: UIViewController {
 
@@ -8,7 +9,7 @@ class RestaurantsVC: UIViewController {
         setTransparentNavigationBar()
         setGradientBackground(colorTop: .white, colorBottom: .systemIndigo)
         self.hideKeyboardWhenTappedAround()
-        self.navigationController?.isNavigationBarHidden = false
+        self.navigationController?.isNavigationBarHidden = true
         setupLogoutButton()
     }
     
@@ -25,7 +26,11 @@ class RestaurantsVC: UIViewController {
 
     
     @objc func logoutButtonTapped() {
-        print("logout")
-        self.navigationController?.popToRootViewController(animated: true)
+        
+        do {
+            try Auth.auth().signOut()
+            self.navigationController?.popToRootViewController(animated: true)
+        } catch { }
+        
     }
 }

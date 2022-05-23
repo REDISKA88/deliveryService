@@ -42,10 +42,6 @@ class CheckUserVC: UIViewController {
     
     private func goToRestsVC() {
         let restsVc = RestaurantsVC()
-        let backItem = UIBarButtonItem()
-        backItem.title = "Назад"
-        backItem.tintColor = .black
-        self.navigationItem.backBarButtonItem = backItem
         self.navigationController?.pushViewController(restsVc, animated: true)
     }
     
