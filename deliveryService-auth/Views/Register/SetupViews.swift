@@ -21,7 +21,7 @@ extension RegisterVC {
     func setupMiddleView() {
         view.addSubview(middleBackView)
         middleBackView.addSubview(midTextLabel)
-        middleBackView.addSubview(phoneNumber)
+        middleBackView.addSubview(phoneNumberTextField)
         middleBackView.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 50).isActive = true
         middleBackView.leadingAnchor.constraint(equalTo: mainLabel.leadingAnchor, constant: -100).isActive = true
         middleBackView.trailingAnchor.constraint(equalTo: mainLabel.trailingAnchor, constant: 100).isActive = true
@@ -31,11 +31,11 @@ extension RegisterVC {
         midTextLabel.centerXAnchor.constraint(equalTo: middleBackView.centerXAnchor).isActive = true
         midTextLabel.topAnchor.constraint(equalTo: middleBackView.topAnchor, constant: 25).isActive = true
         
-        phoneNumber.delegate = self
-        phoneNumber.widthAnchor.constraint(equalToConstant: 250).isActive = true
-        phoneNumber.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        phoneNumber.centerXAnchor.constraint(equalTo: middleBackView.centerXAnchor).isActive = true
-        phoneNumber.centerYAnchor.constraint(equalTo: middleBackView.centerYAnchor, constant: 20).isActive = true
+        phoneNumberTextField.delegate = self
+        phoneNumberTextField.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        phoneNumberTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        phoneNumberTextField.centerXAnchor.constraint(equalTo: middleBackView.centerXAnchor).isActive = true
+        phoneNumberTextField.centerYAnchor.constraint(equalTo: middleBackView.centerYAnchor, constant: 20).isActive = true
     }
     
     

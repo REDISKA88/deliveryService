@@ -20,6 +20,8 @@
 		B84641622839986C009E4E9B /* CheckSetupViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84641612839986C009E4E9B /* CheckSetupViews.swift */; };
 		B84641642839AD01009E4E9B /* RegisterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84641632839AD01009E4E9B /* RegisterDelegate.swift */; };
 		B871A490283BA54700ED7F01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B871A48F283BA54700ED7F01 /* GoogleService-Info.plist */; };
+		B871A493283BBBD600ED7F01 /* RestaurantsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B871A492283BBBD600ED7F01 /* RestaurantsVC.swift */; };
+		B871A495283BBFDC00ED7F01 /* SetupRestsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B871A494283BBFDC00ED7F01 /* SetupRestsViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		B84641612839986C009E4E9B /* CheckSetupViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckSetupViews.swift; sourceTree = "<group>"; };
 		B84641632839AD01009E4E9B /* RegisterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDelegate.swift; sourceTree = "<group>"; };
 		B871A48F283BA54700ED7F01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B871A492283BBBD600ED7F01 /* RestaurantsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsVC.swift; sourceTree = "<group>"; };
+		B871A494283BBFDC00ED7F01 /* SetupRestsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupRestsViews.swift; sourceTree = "<group>"; };
 		D2B659ECE5EF645CB5898235 /* Pods-deliveryService-auth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deliveryService-auth.release.xcconfig"; path = "Target Support Files/Pods-deliveryService-auth/Pods-deliveryService-auth.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +99,7 @@
 				B8464155283940BD009E4E9B /* default */,
 				B84641452839402F009E4E9B /* ViewController.swift */,
 				B846415828394121009E4E9B /* Views */,
+				B871A491283BBBA600ED7F01 /* Restaurants */,
 				B84641472839402F009E4E9B /* Main.storyboard */,
 				B846414A28394030009E4E9B /* Assets.xcassets */,
 				B846414C28394030009E4E9B /* LaunchScreen.storyboard */,
@@ -139,6 +144,15 @@
 				B84641612839986C009E4E9B /* CheckSetupViews.swift */,
 			);
 			path = "Check User";
+			sourceTree = "<group>";
+		};
+		B871A491283BBBA600ED7F01 /* Restaurants */ = {
+			isa = PBXGroup;
+			children = (
+				B871A492283BBBD600ED7F01 /* RestaurantsVC.swift */,
+				B871A494283BBFDC00ED7F01 /* SetupRestsViews.swift */,
+			);
+			path = Restaurants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,11 +273,13 @@
 			files = (
 				B84641462839402F009E4E9B /* ViewController.swift in Sources */,
 				B84641642839AD01009E4E9B /* RegisterDelegate.swift in Sources */,
+				B871A493283BBBD600ED7F01 /* RestaurantsVC.swift in Sources */,
 				B84641572839411B009E4E9B /* RegisterVC.swift in Sources */,
 				B846415C28394401009E4E9B /* SetupViews.swift in Sources */,
 				B84641422839402F009E4E9B /* AppDelegate.swift in Sources */,
 				B846415E28399558009E4E9B /* CheckUserVC.swift in Sources */,
 				B84641442839402F009E4E9B /* SceneDelegate.swift in Sources */,
+				B871A495283BBFDC00ED7F01 /* SetupRestsViews.swift in Sources */,
 				B84641622839986C009E4E9B /* CheckSetupViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

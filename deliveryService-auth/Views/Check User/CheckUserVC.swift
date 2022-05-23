@@ -1,14 +1,15 @@
 
 import UIKit
-
+import FirebaseAuth
 class CheckUserVC: UIViewController {
+    
+    var verifyUserID: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setGradientBackground(colorTop: .white, colorBottom: .systemIndigo)
         self.hideKeyboardWhenTappedAround()
         self.navigationController?.isNavigationBarHidden = false
-        
         setTransparentNavigationBar()
         setupCheckMiddleView()
         setupCheckButton()
@@ -23,14 +24,29 @@ class CheckUserVC: UIViewController {
         checkButton.isEnabled = false
     }
     
-    func setTransparentNavigationBar() {
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
+    @objc func checkCode() {
+        guard let smsCode = codeNumberTextField.text else { return }
+        
+        let idCredential = PhoneAuthProvider.provider().credential(withVerificationID: verifyUserID!, verificationCode: smsCode)
+        Auth.auth().signIn(with: idCredential) { [weak self] (_, error) in
+            if error != nil {
+                let invalidCodeAC = UIAlertController(title: "Неверный код", message: error?.localizedDescription, preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "Отмена", style: .cancel)
+                invalidCodeAC.addAction(cancel)
+                self?.present(invalidCodeAC, animated: true)
+            } else {
+                self?.goToRestsVC()
+            }
+        }
     }
     
-    @objc func checkCode() {
-        print("check code func")
+    private func goToRestsVC() {
+        let restsVc = RestaurantsVC()
+        let backItem = UIBarButtonItem()
+        backItem.title = "Назад"
+        backItem.tintColor = .black
+        self.navigationItem.backBarButtonItem = backItem
+        self.navigationController?.pushViewController(restsVc, animated: true)
     }
     
     let checkTextLabel: UILabel = {
@@ -59,11 +75,11 @@ class CheckUserVC: UIViewController {
         midView.translatesAutoresizingMaskIntoConstraints = false
         midView.layer.masksToBounds = true
         midView.layer.cornerRadius = 40
-        midView.backgroundColor = #colorLiteral(red: 0.2407030165, green: 0.2418233156, blue: 0.2445392311, alpha: 0.2)
+        midView.backgroundColor = #colorLiteral(red: 0.2407030165, green: 0.2418233156, blue: 0.2445392311, alpha: 0.15)
         return midView
     }()
     
-    let codeNumber: UITextField = {
+    let codeNumberTextField: UITextField = {
         let code = UITextField()
         code.attributedPlaceholder = NSAttributedString(
             string: "6 знаков",
@@ -82,10 +98,10 @@ class CheckUserVC: UIViewController {
     let checkButton: UIButton = {
         let checkCode = UIButton()
         checkCode.setTitle("Продолжить", for: .normal)
-        checkCode.setTitleColor(UIColor.white.withAlphaComponent(0.7), for: .normal)
+        checkCode.setTitleColor(UIColor.black.withAlphaComponent(0.7), for: .normal)
         checkCode.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         checkCode.translatesAutoresizingMaskIntoConstraints = false
-        checkCode.backgroundColor = #colorLiteral(red: 0.2407030165, green: 0.2418233156, blue: 0.2445392311, alpha: 0.7)
+        checkCode.backgroundColor = UIColor.white.withAlphaComponent(0.8)
         checkCode.layer.cornerRadius = 30
         return checkCode
     }()
@@ -98,7 +114,7 @@ class CheckUserVC: UIViewController {
         let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done,
                                             target: view, action: #selector(UIView.endEditing(_:)))
         keyboardToolbar.items = [flexBarButton, doneBarButton]
-        codeNumber.inputAccessoryView = keyboardToolbar
+        codeNumberTextField.inputAccessoryView = keyboardToolbar
     }
     
     let sendAgainButton: UIButton = {

@@ -14,7 +14,7 @@ extension CheckUserVC {
     func setupCheckMiddleView() {
         view.addSubview(checkBackView)
         checkBackView.addSubview(checkTextLabel)
-        checkBackView.addSubview(codeNumber)
+        checkBackView.addSubview(codeNumberTextField)
         checkBackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
         checkBackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
         checkBackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
@@ -24,11 +24,11 @@ extension CheckUserVC {
         checkTextLabel.centerXAnchor.constraint(equalTo: checkBackView.centerXAnchor).isActive = true
         checkTextLabel.topAnchor.constraint(equalTo: checkBackView.topAnchor, constant: 25).isActive = true
         
-        codeNumber.delegate = self
-        codeNumber.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        codeNumber.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        codeNumber.centerXAnchor.constraint(equalTo: checkBackView.centerXAnchor).isActive = true
-        codeNumber.centerYAnchor.constraint(equalTo: checkBackView.centerYAnchor, constant: 20).isActive = true
+        codeNumberTextField.delegate = self
+        codeNumberTextField.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        codeNumberTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        codeNumberTextField.centerXAnchor.constraint(equalTo: checkBackView.centerXAnchor).isActive = true
+        codeNumberTextField.centerYAnchor.constraint(equalTo: checkBackView.centerYAnchor, constant: 20).isActive = true
     }
     
     
