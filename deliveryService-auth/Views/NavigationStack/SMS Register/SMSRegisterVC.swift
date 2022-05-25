@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class RegisterVC: UIViewController {
+class SMSRegisterVC: UIViewController {
     
     let maxNumberCount = 11
     let regex =  try! NSRegularExpression(pattern:"[\\+\\s-\\(\\)]", options:.caseInsensitive)
@@ -43,7 +43,7 @@ class RegisterVC: UIViewController {
     
    private func goToCheckUser(with specialID: String) {
        //        DispatchQueue.main.async {}
-        let vc = CheckUserVC()
+        let vc = SMSCheckUserVC()
         vc.verifyUserID = specialID
         setupBackButtonItem()
         self.navigationController?.pushViewController(vc, animated: true)

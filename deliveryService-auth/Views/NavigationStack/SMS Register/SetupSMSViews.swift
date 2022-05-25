@@ -8,8 +8,7 @@
 
 import UIKit
 
-
-extension RegisterVC {
+extension SMSRegisterVC {
     
     func setupMainLabel() {
         view.addSubview(mainLabel)

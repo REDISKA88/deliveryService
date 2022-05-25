@@ -69,12 +69,13 @@ extension StartVC {
         registerButton.widthAnchor.constraint(equalTo: loginButton.widthAnchor).isActive = true
         registerButton.heightAnchor.constraint(equalTo: loginButton.heightAnchor).isActive = true
         
+        registerButton.addTarget(self, action: #selector(goToEmailRegisterVC), for: .touchUpInside)
         
         registerByPhoneButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50).isActive = true
         registerByPhoneButton.centerXAnchor.constraint(equalTo: registerButton.centerXAnchor).isActive = true
         registerByPhoneButton.widthAnchor.constraint(equalTo: registerButton.widthAnchor, constant: 0).isActive = true
         registerByPhoneButton.heightAnchor.constraint(equalTo: registerButton.heightAnchor, constant: 0).isActive = true
         
-        registerByPhoneButton.addTarget(self, action: #selector(goToRegisterVC), for: .touchUpInside)
+        registerByPhoneButton.addTarget(self, action: #selector(goToSMSRegisterVC), for: .touchUpInside)
     }
 }

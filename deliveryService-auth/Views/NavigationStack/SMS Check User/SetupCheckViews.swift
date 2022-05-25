@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension CheckUserVC {
+extension SMSCheckUserVC {
     
     
     func setupCheckMiddleView() {
@@ -58,7 +58,7 @@ extension CheckUserVC {
 
 }
 
-extension CheckUserVC: UITextFieldDelegate {
+extension SMSCheckUserVC: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentChars = textField.text?.count ?? 0
         if range.length + range.location > currentChars { return false }

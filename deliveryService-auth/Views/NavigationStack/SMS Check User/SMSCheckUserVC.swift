@@ -1,7 +1,7 @@
 
 import UIKit
 import FirebaseAuth
-class CheckUserVC: UIViewController {
+class SMSCheckUserVC: UIViewController {
     
     var verifyUserID: String?
     

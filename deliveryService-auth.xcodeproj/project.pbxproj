@@ -19,11 +19,13 @@
 		B84641492839402F009E4E9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84641472839402F009E4E9B /* Main.storyboard */; };
 		B846414B28394030009E4E9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B846414A28394030009E4E9B /* Assets.xcassets */; };
 		B846414E28394030009E4E9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B846414C28394030009E4E9B /* LaunchScreen.storyboard */; };
-		B84641572839411B009E4E9B /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84641562839411B009E4E9B /* RegisterVC.swift */; };
-		B846415C28394401009E4E9B /* SetupRegisterViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B846415B28394401009E4E9B /* SetupRegisterViews.swift */; };
-		B846415E28399558009E4E9B /* CheckUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B846415D28399558009E4E9B /* CheckUserVC.swift */; };
+		B84641572839411B009E4E9B /* SMSRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84641562839411B009E4E9B /* SMSRegisterVC.swift */; };
+		B846415C28394401009E4E9B /* SetupSMSViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B846415B28394401009E4E9B /* SetupSMSViews.swift */; };
+		B846415E28399558009E4E9B /* SMSCheckUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B846415D28399558009E4E9B /* SMSCheckUserVC.swift */; };
 		B84641622839986C009E4E9B /* SetupCheckViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84641612839986C009E4E9B /* SetupCheckViews.swift */; };
-		B84641642839AD01009E4E9B /* RegisterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84641632839AD01009E4E9B /* RegisterDelegate.swift */; };
+		B84641642839AD01009E4E9B /* SMSRegisterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84641632839AD01009E4E9B /* SMSRegisterDelegate.swift */; };
+		B85B56BA283E566500AB7DE8 /* EmailRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85B56B9283E566500AB7DE8 /* EmailRegisterVC.swift */; };
+		B85B56BC283E5EE000AB7DE8 /* SetupEmailViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85B56BB283E5EE000AB7DE8 /* SetupEmailViews.swift */; };
 		B871A490283BA54700ED7F01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B871A48F283BA54700ED7F01 /* GoogleService-Info.plist */; };
 		B871A493283BBBD600ED7F01 /* RestaurantsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B871A492283BBBD600ED7F01 /* RestaurantsVC.swift */; };
 		B871A495283BBFDC00ED7F01 /* SetupRestsViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B871A494283BBFDC00ED7F01 /* SetupRestsViews.swift */; };
@@ -45,11 +47,13 @@
 		B846414A28394030009E4E9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B846414D28394030009E4E9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B846414F28394030009E4E9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B84641562839411B009E4E9B /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
-		B846415B28394401009E4E9B /* SetupRegisterViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupRegisterViews.swift; sourceTree = "<group>"; };
-		B846415D28399558009E4E9B /* CheckUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckUserVC.swift; sourceTree = "<group>"; };
+		B84641562839411B009E4E9B /* SMSRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSRegisterVC.swift; sourceTree = "<group>"; };
+		B846415B28394401009E4E9B /* SetupSMSViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupSMSViews.swift; sourceTree = "<group>"; };
+		B846415D28399558009E4E9B /* SMSCheckUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCheckUserVC.swift; sourceTree = "<group>"; };
 		B84641612839986C009E4E9B /* SetupCheckViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCheckViews.swift; sourceTree = "<group>"; };
-		B84641632839AD01009E4E9B /* RegisterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDelegate.swift; sourceTree = "<group>"; };
+		B84641632839AD01009E4E9B /* SMSRegisterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSRegisterDelegate.swift; sourceTree = "<group>"; };
+		B85B56B9283E566500AB7DE8 /* EmailRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegisterVC.swift; sourceTree = "<group>"; };
+		B85B56BB283E5EE000AB7DE8 /* SetupEmailViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupEmailViews.swift; sourceTree = "<group>"; };
 		B871A48F283BA54700ED7F01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B871A492283BBBD600ED7F01 /* RestaurantsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsVC.swift; sourceTree = "<group>"; };
 		B871A494283BBFDC00ED7F01 /* SetupRestsViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupRestsViews.swift; sourceTree = "<group>"; };
@@ -107,6 +111,17 @@
 				B82FBC8A283E516C0027A5BE /* ProfileVC.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		B82FBC8D283E55160027A5BE /* NavigationStack */ = {
+			isa = PBXGroup;
+			children = (
+				B8463BAD283BE2EC00E3D1F0 /* Start */,
+				B85B56B8283E564600AB7DE8 /* Email Register */,
+				B846415F28399849009E4E9B /* SMS Register */,
+				B846416028399853009E4E9B /* SMS Check User */,
+			);
+			path = NavigationStack;
 			sourceTree = "<group>";
 		};
 		B8463BAD283BE2EC00E3D1F0 /* Start */ = {
@@ -167,30 +182,37 @@
 			isa = PBXGroup;
 			children = (
 				B82FBC86283E43290027A5BE /* Tab Bar */,
-				B8463BAD283BE2EC00E3D1F0 /* Start */,
-				B846415F28399849009E4E9B /* Register */,
-				B846416028399853009E4E9B /* Check User */,
+				B82FBC8D283E55160027A5BE /* NavigationStack */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		B846415F28399849009E4E9B /* Register */ = {
+		B846415F28399849009E4E9B /* SMS Register */ = {
 			isa = PBXGroup;
 			children = (
-				B84641562839411B009E4E9B /* RegisterVC.swift */,
-				B846415B28394401009E4E9B /* SetupRegisterViews.swift */,
-				B84641632839AD01009E4E9B /* RegisterDelegate.swift */,
+				B84641562839411B009E4E9B /* SMSRegisterVC.swift */,
+				B846415B28394401009E4E9B /* SetupSMSViews.swift */,
+				B84641632839AD01009E4E9B /* SMSRegisterDelegate.swift */,
 			);
-			path = Register;
+			path = "SMS Register";
 			sourceTree = "<group>";
 		};
-		B846416028399853009E4E9B /* Check User */ = {
+		B846416028399853009E4E9B /* SMS Check User */ = {
 			isa = PBXGroup;
 			children = (
-				B846415D28399558009E4E9B /* CheckUserVC.swift */,
+				B846415D28399558009E4E9B /* SMSCheckUserVC.swift */,
 				B84641612839986C009E4E9B /* SetupCheckViews.swift */,
 			);
-			path = "Check User";
+			path = "SMS Check User";
+			sourceTree = "<group>";
+		};
+		B85B56B8283E564600AB7DE8 /* Email Register */ = {
+			isa = PBXGroup;
+			children = (
+				B85B56B9283E566500AB7DE8 /* EmailRegisterVC.swift */,
+				B85B56BB283E5EE000AB7DE8 /* SetupEmailViews.swift */,
+			);
+			path = "Email Register";
 			sourceTree = "<group>";
 		};
 		B871A491283BBBA600ED7F01 /* Restaurants */ = {
@@ -321,14 +343,16 @@
 				B82FBC8B283E516C0027A5BE /* ProfileVC.swift in Sources */,
 				B82FBC88283E51000027A5BE /* ShopVC.swift in Sources */,
 				B84641462839402F009E4E9B /* ViewController.swift in Sources */,
-				B84641642839AD01009E4E9B /* RegisterDelegate.swift in Sources */,
+				B84641642839AD01009E4E9B /* SMSRegisterDelegate.swift in Sources */,
 				B871A493283BBBD600ED7F01 /* RestaurantsVC.swift in Sources */,
-				B84641572839411B009E4E9B /* RegisterVC.swift in Sources */,
-				B846415C28394401009E4E9B /* SetupRegisterViews.swift in Sources */,
+				B84641572839411B009E4E9B /* SMSRegisterVC.swift in Sources */,
+				B85B56BA283E566500AB7DE8 /* EmailRegisterVC.swift in Sources */,
+				B846415C28394401009E4E9B /* SetupSMSViews.swift in Sources */,
 				B84641422839402F009E4E9B /* AppDelegate.swift in Sources */,
-				B846415E28399558009E4E9B /* CheckUserVC.swift in Sources */,
+				B846415E28399558009E4E9B /* SMSCheckUserVC.swift in Sources */,
 				B84641442839402F009E4E9B /* SceneDelegate.swift in Sources */,
 				B82FBC85283E40160027A5BE /* TabBarVC.swift in Sources */,
+				B85B56BC283E5EE000AB7DE8 /* SetupEmailViews.swift in Sources */,
 				B8463BAF283BE30700E3D1F0 /* StartVC.swift in Sources */,
 				B8463BB1283BE32C00E3D1F0 /* SetupStartViews.swift in Sources */,
 				B871A495283BBFDC00ED7F01 /* SetupRestsViews.swift in Sources */,

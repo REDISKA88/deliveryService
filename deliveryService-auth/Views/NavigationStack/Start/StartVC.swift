@@ -127,9 +127,16 @@ class StartVC: UIViewController {
         return byPhone
     }()
     
-    @objc func goToRegisterVC() {
-        let regVC = RegisterVC()
+    @objc func goToSMSRegisterVC() {
+        let regVC = SMSRegisterVC()
         setupBackButtonItem()
+        self.navigationController?.pushViewController(regVC, animated: true)
+    }
+    
+    @objc func goToEmailRegisterVC() {
+        let regVC = EmailRegisterVC()
+        setupBackButtonItem()
+        regVC.title = "Регистрация"
         self.navigationController?.pushViewController(regVC, animated: true)
     }
 }

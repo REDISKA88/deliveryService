@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension RegisterVC: UITextFieldDelegate {
+extension SMSRegisterVC: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
           let newString = (textField.text ?? "") + string
           textField.text = formatPhoneNumberTextField(numberOfPhone: newString, shouldRemoveLastDigit: range.length == 1)
