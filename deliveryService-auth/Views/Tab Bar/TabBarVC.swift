@@ -13,9 +13,9 @@ class TabBarVC: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGray4
-         setupTabBar()
+        setupTabBar()
         setImagesForTabBarItems()
+        setGradientBackground(colorTop: .white, colorBottom: .systemIndigo)
     
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -23,25 +23,29 @@ class TabBarVC: UITabBarController {
         if Auth.auth().currentUser?.uid == nil {
             openStartScreen()
         }
-        
-    
     }
     private func setupTabBar() {
-        self.tabBar.barTintColor = .black
+        self.tabBar.barTintColor = .systemIndigo
         self.tabBar.tintColor = .white
        
+       let placesBarController = RestaurantsVC()
+       let placesNavigationController = UINavigationController(rootViewController: placesBarController)
+         // placesNavigationController.navigationBar.tintColor = .clear
+         //placesNavigationController.title = ""
         
+        let shopBarController = ShopVC()
+        let shopNavigationController = UINavigationController(rootViewController: shopBarController)
         
-       let homeBarController = RestaurantsVC()
-       let homeNavigationController = UINavigationController(rootViewController: homeBarController)
-          homeNavigationController.navigationBar.tintColor = .clear
+       // shopNavigationController.title == ""
+       
+        let profileBarController = ProfileVC()
+        let profileNavigationController = UINavigationController(rootViewController: profileBarController)
         
-        
-        self.setViewControllers([homeNavigationController], animated: false)
+        self.setViewControllers([placesNavigationController, shopNavigationController, profileNavigationController], animated: false)
     }
     
     private func setImagesForTabBarItems() {
-        let images = [UIImage(systemName: "house")]
+        let images = [UIImage(systemName: "mappin.and.ellipse"), UIImage(systemName: "cart"), UIImage(systemName: "person")]
         guard let tabBarItems = self.tabBar.items else { return }
         for tabBar in tabBarItems.enumerated() {
             tabBar.element.image = images[tabBar.offset]

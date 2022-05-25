@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8CD77CA648121BAB4C3BA691 /* Pods_deliveryService_auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BDFDF512F00A34C8224EC3C /* Pods_deliveryService_auth.framework */; };
 		B82FBC85283E40160027A5BE /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82FBC84283E40160027A5BE /* TabBarVC.swift */; };
+		B82FBC88283E51000027A5BE /* ShopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82FBC87283E51000027A5BE /* ShopVC.swift */; };
+		B82FBC8B283E516C0027A5BE /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82FBC8A283E516C0027A5BE /* ProfileVC.swift */; };
 		B8463BAF283BE30700E3D1F0 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8463BAE283BE30700E3D1F0 /* StartVC.swift */; };
 		B8463BB1283BE32C00E3D1F0 /* SetupStartViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8463BB0283BE32C00E3D1F0 /* SetupStartViews.swift */; };
 		B84641422839402F009E4E9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84641412839402F009E4E9B /* AppDelegate.swift */; };
@@ -31,6 +33,8 @@
 		2E8682EFF24F2BA1D7AD7169 /* Pods-deliveryService-auth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deliveryService-auth.debug.xcconfig"; path = "Target Support Files/Pods-deliveryService-auth/Pods-deliveryService-auth.debug.xcconfig"; sourceTree = "<group>"; };
 		8BDFDF512F00A34C8224EC3C /* Pods_deliveryService_auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_deliveryService_auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82FBC84283E40160027A5BE /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		B82FBC87283E51000027A5BE /* ShopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopVC.swift; sourceTree = "<group>"; };
+		B82FBC8A283E516C0027A5BE /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		B8463BAE283BE30700E3D1F0 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		B8463BB0283BE32C00E3D1F0 /* SetupStartViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupStartViews.swift; sourceTree = "<group>"; };
 		B846413E2839402F009E4E9B /* deliveryService-auth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "deliveryService-auth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +93,22 @@
 			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
+		B82FBC89283E51070027A5BE /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				B82FBC87283E51000027A5BE /* ShopVC.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		B82FBC8C283E51700027A5BE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B82FBC8A283E516C0027A5BE /* ProfileVC.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		B8463BAD283BE2EC00E3D1F0 /* Start */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +142,8 @@
 				B8464155283940BD009E4E9B /* default */,
 				B84641452839402F009E4E9B /* ViewController.swift */,
 				B846415828394121009E4E9B /* Views */,
+				B82FBC89283E51070027A5BE /* Shop */,
+				B82FBC8C283E51700027A5BE /* Profile */,
 				B871A491283BBBA600ED7F01 /* Restaurants */,
 				B84641472839402F009E4E9B /* Main.storyboard */,
 				B846414A28394030009E4E9B /* Assets.xcassets */,
@@ -296,6 +318,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B82FBC8B283E516C0027A5BE /* ProfileVC.swift in Sources */,
+				B82FBC88283E51000027A5BE /* ShopVC.swift in Sources */,
 				B84641462839402F009E4E9B /* ViewController.swift in Sources */,
 				B84641642839AD01009E4E9B /* RegisterDelegate.swift in Sources */,
 				B871A493283BBBD600ED7F01 /* RestaurantsVC.swift in Sources */,
