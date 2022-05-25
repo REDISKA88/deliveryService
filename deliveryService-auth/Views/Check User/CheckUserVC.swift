@@ -41,8 +41,7 @@ class CheckUserVC: UIViewController {
     }
     
     private func goToRestsVC() {
-        let restsVc = RestaurantsVC()
-        self.navigationController?.pushViewController(restsVc, animated: true)
+        self.navigationController?.popToRootViewController(animated: false)
     }
     
     let checkTextLabel: UILabel = {

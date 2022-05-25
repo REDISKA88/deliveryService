@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8CD77CA648121BAB4C3BA691 /* Pods_deliveryService_auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BDFDF512F00A34C8224EC3C /* Pods_deliveryService_auth.framework */; };
+		B82FBC85283E40160027A5BE /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82FBC84283E40160027A5BE /* TabBarVC.swift */; };
 		B8463BAF283BE30700E3D1F0 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8463BAE283BE30700E3D1F0 /* StartVC.swift */; };
 		B8463BB1283BE32C00E3D1F0 /* SetupStartViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8463BB0283BE32C00E3D1F0 /* SetupStartViews.swift */; };
 		B84641422839402F009E4E9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84641412839402F009E4E9B /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		2E8682EFF24F2BA1D7AD7169 /* Pods-deliveryService-auth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-deliveryService-auth.debug.xcconfig"; path = "Target Support Files/Pods-deliveryService-auth/Pods-deliveryService-auth.debug.xcconfig"; sourceTree = "<group>"; };
 		8BDFDF512F00A34C8224EC3C /* Pods_deliveryService_auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_deliveryService_auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B82FBC84283E40160027A5BE /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		B8463BAE283BE30700E3D1F0 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		B8463BB0283BE32C00E3D1F0 /* SetupStartViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupStartViews.swift; sourceTree = "<group>"; };
 		B846413E2839402F009E4E9B /* deliveryService-auth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "deliveryService-auth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,14 @@
 				D2B659ECE5EF645CB5898235 /* Pods-deliveryService-auth.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B82FBC86283E43290027A5BE /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				B82FBC84283E40160027A5BE /* TabBarVC.swift */,
+			);
+			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
 		B8463BAD283BE2EC00E3D1F0 /* Start */ = {
@@ -134,6 +144,7 @@
 		B846415828394121009E4E9B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B82FBC86283E43290027A5BE /* Tab Bar */,
 				B8463BAD283BE2EC00E3D1F0 /* Start */,
 				B846415F28399849009E4E9B /* Register */,
 				B846416028399853009E4E9B /* Check User */,
@@ -293,6 +304,7 @@
 				B84641422839402F009E4E9B /* AppDelegate.swift in Sources */,
 				B846415E28399558009E4E9B /* CheckUserVC.swift in Sources */,
 				B84641442839402F009E4E9B /* SceneDelegate.swift in Sources */,
+				B82FBC85283E40160027A5BE /* TabBarVC.swift in Sources */,
 				B8463BAF283BE30700E3D1F0 /* StartVC.swift in Sources */,
 				B8463BB1283BE32C00E3D1F0 /* SetupStartViews.swift in Sources */,
 				B871A495283BBFDC00ED7F01 /* SetupRestsViews.swift in Sources */,

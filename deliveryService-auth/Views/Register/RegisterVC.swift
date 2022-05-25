@@ -38,10 +38,6 @@ class RegisterVC: UIViewController {
             guard let id = verifyID else { return }
             self?.goToCheckUser(with: id)
         }
-        
-
-   
-        
     }
     
     
@@ -49,11 +45,7 @@ class RegisterVC: UIViewController {
        //        DispatchQueue.main.async {}
         let vc = CheckUserVC()
         vc.verifyUserID = specialID
-        let backItem = UIBarButtonItem()
-        backItem.title = "Назад"
-        backItem.tintColor = .black
-        
-        self.navigationItem.backBarButtonItem = backItem
+        setupBackButtonItem()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -115,7 +107,7 @@ class RegisterVC: UIViewController {
         getCode.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         getCode.translatesAutoresizingMaskIntoConstraints = false
         //getCode.backgroundColor = #colorLiteral(red: 0.2407030165, green: 0.2418233156, blue: 0.2445392311, alpha: 0.7)
-        getCode.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        getCode.backgroundColor = UIColor.white.withAlphaComponent(1)
         getCode.layer.cornerRadius = 30
         return getCode
     }()

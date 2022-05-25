@@ -15,9 +15,10 @@ class StartVC: UIViewController {
         super.viewWillAppear(animated)
         DispatchQueue.main.async {
             if Auth.auth().currentUser?.uid != nil {
+                self.dismiss(animated: false, completion: nil)
                 // TabBar vc in future
-                let restsVc = RestaurantsVC()
-                self.navigationController?.pushViewController(restsVc, animated: false)
+//                let restsVc = RestaurantsVC()
+//                self.navigationController?.pushViewController(restsVc, animated: false)
             }
         }
     }

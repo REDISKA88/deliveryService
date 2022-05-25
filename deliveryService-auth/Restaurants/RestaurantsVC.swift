@@ -26,10 +26,11 @@ class RestaurantsVC: UIViewController {
 
     
     @objc func logoutButtonTapped() {
-        
+        print("logout press")
         do {
             try Auth.auth().signOut()
-            self.navigationController?.popToRootViewController(animated: true)
+            openStartScreen()
+            //self.navigationController?.popToRootViewController(animated: true)
         } catch { }
         
     }
