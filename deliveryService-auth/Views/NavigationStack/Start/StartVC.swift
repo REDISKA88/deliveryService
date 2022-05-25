@@ -60,7 +60,7 @@ class StartVC: UIViewController {
      }()
     let loginTextField: UITextField = {
         let loginTF = UITextField()
-        loginTF.textColor = .white
+        loginTF.textColor = UIColor.black.withAlphaComponent(0.7)
         loginTF.textAlignment = .center
         loginTF.font = .systemFont(ofSize: 22)
         loginTF.attributedPlaceholder = NSAttributedString(
@@ -78,7 +78,7 @@ class StartVC: UIViewController {
     
     let passwordTextField: UITextField = {
         let password = UITextField()
-        password.textColor = .white
+        password.textColor = UIColor.black.withAlphaComponent(0.7)
         password.textAlignment = .center
         password.font = .systemFont(ofSize: 22)
         password.attributedPlaceholder = NSAttributedString(

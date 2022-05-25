@@ -44,6 +44,18 @@
                     <view key="view" contentMode="scaleToFill" id="8H6-J8-iXh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggZ-oX-okh">
+                                <rect key="frame" x="60" y="285" width="163" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Показать пароль" image="app" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ol2-L7-g64">
+                                <rect key="frame" x="60" y="315" width="163" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Показать пароль" image="checkmark.square" catalog="system"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.88131949045838709" green="0.88840567327760733" blue="0.97957645939086291" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="sgY-SN-lgt"/>
                     </view>
@@ -174,4 +186,8 @@
             <point key="canvasLocation" x="4674" y="-1579"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="app" catalog="system" width="64" height="56"/>
+        <image name="checkmark.square" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

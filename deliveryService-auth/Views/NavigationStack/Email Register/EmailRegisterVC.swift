@@ -15,56 +15,165 @@ class EmailRegisterVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         setTransparentNavigationBar()
         setGradientBackground(colorTop: .white, colorBottom: .systemIndigo)
+        
+        setupLastAndFirstNameViews()
+        setupMidNameAndEmailViews()
+        setupPasswordViews()
+        setupEmailRegisterButton()
     }
     
     
+    @objc func pressDisplayPasswordOnEmailVc( _ button: UIButton!) {
+        if button.tag == 0 {
+            button.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            button.tag = 1
+        } else if button.tag == 1 {
+            button.setImage(UIImage(systemName: "app"), for: .normal)
+            button.tag = 0
+        }
+    }
+    
     let lastNameView: UIView = {
-       let loginV = UIView()
-        loginV.translatesAutoresizingMaskIntoConstraints = false
-        loginV.layer.cornerRadius = 25
-        loginV.backgroundColor = UIColor.white.withAlphaComponent(0.3)
-        return loginV
+       let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 25
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+        return view
     }()
     
     let firstNameView: UIView = {
-        let passwordV = UIView()
-         passwordV.translatesAutoresizingMaskIntoConstraints = false
-         passwordV.layer.cornerRadius = 25
-         passwordV.backgroundColor = UIColor.white.withAlphaComponent(0.3)
-         return passwordV
+        let view = UIView()
+         view.translatesAutoresizingMaskIntoConstraints = false
+         view.layer.cornerRadius = 25
+         view.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+         return view
      }()
-    let lastNameField: UITextField = {
-        let loginTF = UITextField()
-        loginTF.textColor = .white
-        loginTF.textAlignment = .center
-        loginTF.font = .systemFont(ofSize: 22)
-        loginTF.attributedPlaceholder = NSAttributedString(
-            string: "Фамилия",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightText.withAlphaComponent(0.8)]
+    let midNameView: UIView = {
+       let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 25
+        view.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+        return view
+    }()
+    
+    let emailView: UIView = {
+        let view = UIView()
+         view.translatesAutoresizingMaskIntoConstraints = false
+         view.layer.cornerRadius = 25
+         view.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+         return view
+     }()
+    
+    let userPasswordView: UIView = {
+        let view = UIView()
+         view.translatesAutoresizingMaskIntoConstraints = false
+         view.layer.cornerRadius = 25
+         view.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+         return view
+     }()
+    
+    let userPasswordTextField: UITextField = {
+        let textfield = UITextField()
+        textfield.textColor = UIColor.black.withAlphaComponent(0.9)
+        textfield.textAlignment = .left
+        textfield.font = .systemFont(ofSize: 19)
+        textfield.attributedPlaceholder = NSAttributedString(
+            string: "Пароль",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.7)]
         )
-        loginTF.translatesAutoresizingMaskIntoConstraints = false
-        loginTF.keyboardType = .emailAddress
-        loginTF.backgroundColor = .clear
-        loginTF.layer.cornerRadius = 20
-        return loginTF
+        textfield.translatesAutoresizingMaskIntoConstraints = false
+        textfield.keyboardType = .emailAddress
+        textfield.backgroundColor = .clear
+        textfield.layer.cornerRadius = 20
+        return textfield
+    }()
+    
+    let lastNameTextField: UITextField = {
+        let textfield = UITextField()
+        textfield.textColor = UIColor.black.withAlphaComponent(0.9)
+        textfield.textAlignment = .left
+        textfield.font = .systemFont(ofSize: 19)
+        textfield.attributedPlaceholder = NSAttributedString(
+            string: "Фамилия",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.7)]
+        )
+        textfield.translatesAutoresizingMaskIntoConstraints = false
+        textfield.keyboardType = .emailAddress
+        textfield.backgroundColor = .clear
+        textfield.layer.cornerRadius = 20
+        return textfield
     }()
     
     
     
     let firstNameTextField: UITextField = {
-        let password = UITextField()
-        password.textColor = .white
-        password.textAlignment = .center
-        password.font = .systemFont(ofSize: 22)
-        password.attributedPlaceholder = NSAttributedString(
+        let textfield = UITextField()
+        textfield.textColor = UIColor.black.withAlphaComponent(0.9)
+        textfield.textAlignment = .left
+        textfield.font = .systemFont(ofSize: 19)
+        textfield.attributedPlaceholder = NSAttributedString(
             string: "Имя",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightText.withAlphaComponent(0.8)]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.7)]
         )
-        password.translatesAutoresizingMaskIntoConstraints = false
-        password.keyboardType = .namePhonePad
-        password.backgroundColor = .clear
-        password.layer.cornerRadius = 20
-        return password
+        textfield.translatesAutoresizingMaskIntoConstraints = false
+        textfield.keyboardType = .alphabet
+        textfield.backgroundColor = .clear
+        textfield.layer.cornerRadius = 20
+        return textfield
+    }()
+    
+    let midNameTextField: UITextField = {
+        let textfield = UITextField()
+        textfield.textColor = UIColor.black.withAlphaComponent(0.9)
+        textfield.textAlignment = .left
+        textfield.font = .systemFont(ofSize: 19)
+        textfield.attributedPlaceholder = NSAttributedString(
+            string: "Отчество",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.7)]
+        )
+        textfield.translatesAutoresizingMaskIntoConstraints = false
+        textfield.keyboardType = .emailAddress
+        textfield.backgroundColor = .clear
+        textfield.layer.cornerRadius = 20
+        return textfield
+    }()
+    
+    let emailTextField: UITextField = {
+        let textfield = UITextField()
+        textfield.textColor = UIColor.black.withAlphaComponent(0.9)
+        textfield.textAlignment = .left
+        textfield.font = .systemFont(ofSize: 19)
+        textfield.attributedPlaceholder = NSAttributedString(
+            string: "Email",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.7)]
+        )
+        textfield.translatesAutoresizingMaskIntoConstraints = false
+        textfield.keyboardType = .emailAddress
+        textfield.backgroundColor = .clear
+        textfield.layer.cornerRadius = 20
+        return textfield
+    }()
+    
+    let emailRegisterButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Зарегистрироваться", for: .normal)
+        button.setTitleColor(UIColor.white.withAlphaComponent(1), for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.8)
+        button.layer.cornerRadius = 30
+        
+        return button
+    }()
+    
+    let displayPasswordButton: UIButton = {
+        let button = UIButton()
+        button.setTitle(" Показать пароль", for: .normal)
+        button.setImage(UIImage(systemName: "app"), for: .normal)
+        button.setTitleColor(UIColor.black.withAlphaComponent(0.8), for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     
