@@ -25,21 +25,35 @@ class EmailRegisterVC: UIViewController {
     }
     
     @objc func pressEmailRegisterButton(_ button: UIButton) {
-        print("register pressed")
-        
+        guard chechTextFields() else { print("invalid user data"); return }
+        self.navigationController?.popToRootViewController(animated: true)
         
        // showToast(message: "register") if at firebase error
         // if user register success == true -> popToRoot
     }
     
     func chechTextFields() -> Bool {
-        return true
+        
+        var state: Bool = true
+        if lastNameTextField.text?.isEmpty == true {  setIncorrectData(in: lastNameView); state = false }
+        
+        if firstNameTextField.text?.isEmpty == true {  setIncorrectData(in: firstNameView); state = false}
+        
+        if midNameTextField.text?.isEmpty == true {  setIncorrectData(in: midNameView); state = false }
+        
+        if emailTextField.text?.isEmpty == true {  setIncorrectData(in: emailView); state = false }
+        
+        if userPasswordTextField.text?.isEmpty == true {  setIncorrectData(in: userPasswordView); state = false }
+        
+        if confirmUserPasswordTextField.text?.isEmpty == true  {  setIncorrectData(in: confirmUserPasswordView); state = false }
+        
+        if userPasswordTextField.text.hashValue != confirmUserPasswordTextField.text.hashValue { showToast(message: "Пароли не совпадают"); state = false}
+        return state
     }
 
-    func setIncorrectData(in customView: UIView) {
-       customView.layer.borderWidth = 1.5
-       customView.layer.animateBorderColor(from: UIColor.red, to: UIColor.clear, withDuration: 5.0)
-    
+    func setIncorrectData(in customView: UIView){
+        customView.layer.borderWidth = 1.5
+        customView.layer.animateBorderColor(from: UIColor.red, to: UIColor.clear, withDuration: 5.0)
     }
     
     @objc func pressDisplayPasswordOnEmailVc( _ button: UIButton!) {

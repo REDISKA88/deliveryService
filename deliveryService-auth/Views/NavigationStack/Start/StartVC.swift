@@ -156,9 +156,10 @@ extension UIViewController {
     }
     
     func showToast(message: String) {
-        let toast = UILabel(frame: CGRect(x: self.view.frame.width/2-75, y: self.view.frame.height - 100, width: 150, height: 40))
+        let toast = UILabel(frame: CGRect(x: self.view.frame.width/2-75, y: self.view.frame.height - 100, width: 180, height: 55))
         toast.textAlignment = .center
-        toast.backgroundColor = UIColor.systemRed.withAlphaComponent(0.5)
+        toast.numberOfLines = 0
+        toast.backgroundColor = UIColor.systemRed.withAlphaComponent(0.7)
         toast.textColor = .white
         toast.font = UIFont.systemFont(ofSize: 18)
         toast.alpha = 1
