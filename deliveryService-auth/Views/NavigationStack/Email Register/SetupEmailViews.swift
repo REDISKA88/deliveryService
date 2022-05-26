@@ -16,12 +16,16 @@ extension EmailRegisterVC {
         emailRegisterButton.bottomAnchor.constraint(equalTo: displayPasswordButton.bottomAnchor, constant: 100).isActive = true
         emailRegisterButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         emailRegisterButton.widthAnchor.constraint(equalToConstant: 220).isActive = true
+        
+        emailRegisterButton.addTarget(self, action: #selector(pressEmailRegisterButton(_:)), for: .touchUpInside)
     }
     
     func setupPasswordViews() {
         view.addSubview(userPasswordView)
         view.addSubview(displayPasswordButton)
+        view.addSubview(confirmUserPasswordView)
         userPasswordView.addSubview(userPasswordTextField)
+        confirmUserPasswordView.addSubview(confirmUserPasswordTextField)
         
         userPasswordView.centerXAnchor.constraint(equalTo: emailView.centerXAnchor).isActive = true
         userPasswordView.topAnchor.constraint(equalTo: emailView.bottomAnchor, constant: 20).isActive = true
@@ -35,8 +39,22 @@ extension EmailRegisterVC {
         userPasswordTextField.bottomAnchor.constraint(equalTo: userPasswordView.bottomAnchor, constant: -5).isActive = true
         
         
-        displayPasswordButton.topAnchor.constraint(equalTo: userPasswordView.bottomAnchor, constant: 5).isActive = true
-        displayPasswordButton.leadingAnchor.constraint(equalTo: userPasswordView.leadingAnchor, constant: 10).isActive = true
+        confirmUserPasswordView.centerXAnchor.constraint(equalTo: userPasswordView.centerXAnchor).isActive = true
+        confirmUserPasswordView.topAnchor.constraint(equalTo: userPasswordView.bottomAnchor, constant: 20).isActive = true
+        confirmUserPasswordView.leadingAnchor.constraint(equalTo: userPasswordView.leadingAnchor).isActive = true
+        confirmUserPasswordView.trailingAnchor.constraint(equalTo: userPasswordView.trailingAnchor).isActive = true
+        confirmUserPasswordView.heightAnchor.constraint(equalTo: userPasswordView.heightAnchor).isActive = true
+        
+        
+        confirmUserPasswordTextField.topAnchor.constraint(equalTo: confirmUserPasswordView.topAnchor, constant: 5).isActive = true
+        confirmUserPasswordTextField.leadingAnchor.constraint(equalTo: confirmUserPasswordView.leadingAnchor, constant: 25).isActive = true
+        confirmUserPasswordTextField.trailingAnchor.constraint(equalTo: confirmUserPasswordView.trailingAnchor, constant: -5).isActive = true
+        confirmUserPasswordTextField.bottomAnchor.constraint(equalTo: confirmUserPasswordView.bottomAnchor, constant: -5).isActive = true
+        
+        
+        
+        displayPasswordButton.topAnchor.constraint(equalTo: confirmUserPasswordView.bottomAnchor, constant: 5).isActive = true
+        displayPasswordButton.leadingAnchor.constraint(equalTo: confirmUserPasswordView.leadingAnchor, constant: 10).isActive = true
         displayPasswordButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
         displayPasswordButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         

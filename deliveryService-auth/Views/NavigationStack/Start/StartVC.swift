@@ -27,6 +27,7 @@ class StartVC: UIViewController {
         super.viewDidLoad()
         
         setGradientBackground(colorTop: .white, colorBottom: .systemIndigo)
+        hideKeyboardWhenTappedAround()
         self.navigationController?.isNavigationBarHidden = true
         setupStartLabel()
         setupStartTextViews()
@@ -78,6 +79,8 @@ class StartVC: UIViewController {
     
     let passwordTextField: UITextField = {
         let password = UITextField()
+        password.isSecureTextEntry = true
+        password.textContentType = .oneTimeCode
         password.textColor = UIColor.black.withAlphaComponent(0.7)
         password.textAlignment = .center
         password.font = .systemFont(ofSize: 22)
@@ -152,4 +155,36 @@ extension UIViewController {
         self.navigationItem.backBarButtonItem = backItem
     }
     
+    func showToast(message: String) {
+        let toast = UILabel(frame: CGRect(x: self.view.frame.width/2-75, y: self.view.frame.height - 100, width: 150, height: 40))
+        toast.textAlignment = .center
+        toast.backgroundColor = UIColor.systemRed.withAlphaComponent(0.5)
+        toast.textColor = .white
+        toast.font = UIFont.systemFont(ofSize: 18)
+        toast.alpha = 1
+        toast.layer.cornerRadius = 15
+        toast.clipsToBounds = true
+        toast.text = message
+        self.view.addSubview(toast)
+        UIView.animate(withDuration: 5, delay: 1, options: .curveEaseInOut, animations: {
+            toast.alpha = 0
+        }) { (completion) in
+            toast.removeFromSuperview()
+        }
+    }
+
+    
+}
+
+extension CALayer {
+
+func animateBorderColor(from startColor: UIColor, to endColor: UIColor, withDuration duration: Double) {
+    let colorAnimation = CABasicAnimation(keyPath: "borderColor")
+    colorAnimation.fromValue = startColor.cgColor
+    colorAnimation.toValue = endColor.cgColor
+    colorAnimation.duration = duration
+    self.borderColor = endColor.cgColor
+    self.add(colorAnimation, forKey: "borderColor")
+}
+
 }
