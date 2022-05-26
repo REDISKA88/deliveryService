@@ -36,20 +36,25 @@ class StartVC: UIViewController {
     
     
     @objc func loginButtonPressed() {
+        hideKeyboard()
         guard let userLogin = loginTextField.text, let userPassword = passwordTextField.text, userLogin.isEmpty == false, userPassword.isEmpty == false else {
             print("guard userlogin password error")
             return
         }
         Auth.auth().signIn(withEmail: userLogin, password: userPassword) { [weak self] (user, error) in
             if error != nil {
-                self?.showToast(message: "error occurred")
-                print(error!)
-                print(error!.localizedDescription)
+                if error?.localizedDescription == "The email address is badly formatted." {
+                    self?.showToast(message: "Введен некорректный email", forStart: true)
+                }
+                if error?.localizedDescription == "There is no user record corresponding to this identifier. The user may have been deleted." {
+                    self?.showToast(message: "Такого пользователя не существует", forStart: true)
+                }
                 return
             }
             if user != nil {
                 self?.dismiss(animated: true, completion: nil)
             }
+            self?.showToast(message: "Такого пользователя не существует", forStart: true)
         }
     }
     
@@ -179,8 +184,12 @@ extension UIViewController {
         customView.layer.animateBorderColor(from: UIColor.red, to: UIColor.clear, withDuration: 5.0)
     }
     
-    func showToast(message: String) {
-        let toast = UILabel(frame: CGRect(x: self.view.frame.width/2-75, y: self.view.frame.height - 100, width: 180, height: 55))
+    func showToast(message: String, forStart: Bool) {
+        var heightPos = self.view.frame.height - 100
+        if forStart == true {
+            heightPos = self.view.frame.height - 200
+        }
+        let toast = UILabel(frame: CGRect(x: self.view.frame.width/2-90, y: heightPos, width: 180, height: 55))
         toast.textAlignment = .center
         toast.numberOfLines = 0
         toast.backgroundColor = UIColor.systemRed.withAlphaComponent(0.7)

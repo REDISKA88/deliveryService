@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class EmailRegisterVC: UIViewController {
 
@@ -20,16 +21,20 @@ class EmailRegisterVC: UIViewController {
         setupMidNameAndEmailViews()
         setupPasswordViews()
         setupEmailRegisterButton()
-        
-        
     }
     
     @objc func pressEmailRegisterButton(_ button: UIButton) {
         guard chechTextFields() else { print("invalid user data"); return }
-        self.navigationController?.popToRootViewController(animated: true)
-        
-       // showToast(message: "register") if at firebase error
-        // if user register success == true -> popToRoot
+        guard let userEmail = emailTextField.text, let userPassword = userPasswordTextField.text else { return }
+        Auth.auth().createUser(withEmail: userEmail, password: userPassword) { [weak self] (user, error) in
+            if error != nil {
+                self?.showToast(message: "Ошибка", forStart: false)
+                return
+            }
+            if user != nil {
+                self?.navigationController?.popToRootViewController(animated: true)
+            }
+        }
     }
     
    private func chechTextFields() -> Bool {
@@ -47,7 +52,7 @@ class EmailRegisterVC: UIViewController {
         
         if confirmUserPasswordTextField.text?.isEmpty == true  {  setIncorrectData(in: confirmUserPasswordView); state = false }
         
-        if userPasswordTextField.text.hashValue != confirmUserPasswordTextField.text.hashValue { showToast(message: "Пароли не совпадают"); state = false}
+    if userPasswordTextField.text.hashValue != confirmUserPasswordTextField.text.hashValue { showToast(message: "Пароли не совпадают", forStart: false); state = false}
         return state
     }
 
