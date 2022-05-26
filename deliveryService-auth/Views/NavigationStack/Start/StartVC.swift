@@ -34,6 +34,25 @@ class StartVC: UIViewController {
         setupStartButtons()
     }
     
+    
+    @objc func loginButtonPressed() {
+        guard let userLogin = loginTextField.text, let userPassword = passwordTextField.text, userLogin.isEmpty == false, userPassword.isEmpty == false else {
+            print("guard userlogin password error")
+            return
+        }
+        Auth.auth().signIn(withEmail: userLogin, password: userPassword) { [weak self] (user, error) in
+            if error != nil {
+                self?.showToast(message: "error occurred")
+                print(error!)
+                print(error!.localizedDescription)
+                return
+            }
+            if user != nil {
+                self?.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
     let startLabel: UILabel = {
         let label = UILabel()
         label.text = "Delivery Service App"
@@ -153,6 +172,11 @@ extension UIViewController {
         backItem.tintColor = .black
         
         self.navigationItem.backBarButtonItem = backItem
+    }
+    
+    func setIncorrectData(in customView: UIView){
+        customView.layer.borderWidth = 1.5
+        customView.layer.animateBorderColor(from: UIColor.red, to: UIColor.clear, withDuration: 5.0)
     }
     
     func showToast(message: String) {

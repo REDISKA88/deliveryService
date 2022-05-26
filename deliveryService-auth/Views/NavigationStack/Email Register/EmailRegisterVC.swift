@@ -32,7 +32,7 @@ class EmailRegisterVC: UIViewController {
         // if user register success == true -> popToRoot
     }
     
-    func chechTextFields() -> Bool {
+   private func chechTextFields() -> Bool {
         
         var state: Bool = true
         if lastNameTextField.text?.isEmpty == true {  setIncorrectData(in: lastNameView); state = false }
@@ -51,10 +51,7 @@ class EmailRegisterVC: UIViewController {
         return state
     }
 
-    func setIncorrectData(in customView: UIView){
-        customView.layer.borderWidth = 1.5
-        customView.layer.animateBorderColor(from: UIColor.red, to: UIColor.clear, withDuration: 5.0)
-    }
+
     
     @objc func pressDisplayPasswordOnEmailVc( _ button: UIButton!) {
 

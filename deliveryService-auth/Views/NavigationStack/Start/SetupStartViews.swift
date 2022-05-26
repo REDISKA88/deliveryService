@@ -77,5 +77,7 @@ extension StartVC {
         registerByPhoneButton.heightAnchor.constraint(equalTo: registerButton.heightAnchor, constant: 0).isActive = true
         
         registerByPhoneButton.addTarget(self, action: #selector(goToSMSRegisterVC), for: .touchUpInside)
+        
+        loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
     }
 }
