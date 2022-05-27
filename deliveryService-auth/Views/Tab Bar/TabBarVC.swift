@@ -30,13 +30,10 @@ class TabBarVC: UITabBarController {
        
        let placesBarController = RestaurantsVC()
        let placesNavigationController = UINavigationController(rootViewController: placesBarController)
-         // placesNavigationController.navigationBar.tintColor = .clear
-         //placesNavigationController.title = ""
+
         
         let shopBarController = ShopVC()
         let shopNavigationController = UINavigationController(rootViewController: shopBarController)
-        
-       // shopNavigationController.title == ""
        
         let profileBarController = ProfileVC()
         let profileNavigationController = UINavigationController(rootViewController: profileBarController)
