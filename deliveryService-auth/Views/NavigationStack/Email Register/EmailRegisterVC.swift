@@ -8,9 +8,13 @@
 
 import UIKit
 import FirebaseAuth
+//import FirebaseCore
+//import FirebaseFirestore
+import FirebaseDatabase
 
 class EmailRegisterVC: UIViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
@@ -26,12 +30,20 @@ class EmailRegisterVC: UIViewController {
     @objc func pressEmailRegisterButton(_ button: UIButton) {
         guard chechTextFields() else { print("invalid user data"); return }
         guard let userEmail = emailTextField.text, let userPassword = userPasswordTextField.text else { return }
-        Auth.auth().createUser(withEmail: userEmail, password: userPassword) { [weak self] (user, error) in
+        guard let lastName = lastNameTextField.text, let midName = midNameTextField.text, let firstName = firstNameTextField.text else { return }
+        Auth.auth().createUser(withEmail: userEmail, password: userPassword) { [weak self] (result, error) in
             if error != nil {
                 self?.showToast(message: "Ошибка", forStart: false)
                 return
             }
-            if user != nil {
+            if let result = result {
+                let ref = Database.database().reference().child("users")
+                ref.child(result.user.uid)
+                ref.child(result.user.uid).updateChildValues(["firstName" : firstName,
+                                                              "midName" : midName,
+                                                              "lastName" : lastName,
+                                                              "email" : userEmail])
+
                 self?.navigationController?.popToRootViewController(animated: true)
             }
         }

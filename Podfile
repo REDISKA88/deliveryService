@@ -8,4 +8,6 @@ target 'deliveryService-auth' do
   # Pods for deliveryService-auth
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
+pod 'Firebase/Database'
+
 end
